@@ -32,7 +32,8 @@ public class HelloJenkinsApplication {
 			LocalDateTime localDateTimeNow = LocalDateTime.now();
 			//localDateTimeNow.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 
-			String filePath = directoryName + "/"+localDateTimeNow.format(DateTimeFormatter.ofPattern("yyyyMMddhhMMss"))+".txt";
+			String filePath = directoryName + "/"+localDateTimeNow.format(DateTimeFormatter.ofPattern("yyyyMMdd_hhMMSS")).toString()+".txt";
+			//String filePath = directoryName + "/"+"test_aa"+".txt";
 
 			File file = new File(filePath); // File객체 생성
 			if (!file.exists()) { // 파일이 존재하지 않으면
