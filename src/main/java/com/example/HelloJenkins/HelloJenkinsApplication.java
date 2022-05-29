@@ -8,6 +8,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @SpringBootApplication
 public class HelloJenkinsApplication {
@@ -25,7 +27,12 @@ public class HelloJenkinsApplication {
 			String directoryName = path.toAbsolutePath().toString();
 
 
-			String filePath = directoryName + "/Test.txt";
+
+
+			LocalDateTime localDateTimeNow = LocalDateTime.now();
+			//localDateTimeNow.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+
+			String filePath = directoryName + "/"+localDateTimeNow.format(DateTimeFormatter.ofPattern("yyyyMMddhhMMss"))+".txt";
 
 			File file = new File(filePath); // File객체 생성
 			if (!file.exists()) { // 파일이 존재하지 않으면
@@ -39,12 +46,15 @@ public class HelloJenkinsApplication {
 			writer.write("하이루!");
 			writer.newLine();
 			writer.write("반가워!");
+
 			writer.newLine();
 
 			// 버퍼 및 스트림 뒷정리
 			writer.flush(); // 버퍼의 남은 데이터를 모두 쓰기
 			writer.close(); // 스트림 종료
 		}catch (Exception ex ) {
+
+
 			ex.getMessage();
 		}
 
