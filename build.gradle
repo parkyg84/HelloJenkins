@@ -22,7 +22,10 @@ tasks.named('test') {
 }
 
 //bootJar {
-//	mainClassName='com.example.HelloJenkins.HelloJenkinsApplication'
+//	archiveBaseName = 'com.example.HelloJenkins'
+//	archiveFileName = '-.jar'
+//	archiveVersion = "0.0.1-SNAPSHOT"
+//	//mainClassName='com.example.HelloJenkins.HelloJenkinsApplication'
 //}
 
 //bootRun {
