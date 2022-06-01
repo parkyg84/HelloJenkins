@@ -21,12 +21,12 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-//bootJar {
-//	archiveBaseName = 'com.example.HelloJenkins'
-//	archiveFileName = '-.jar'
-//	archiveVersion = "0.0.1-SNAPSHOT"
-//	//mainClassName='com.example.HelloJenkins.HelloJenkinsApplication'
-//}
+bootJar {
+	archiveBaseName = 'com.example.HelloJenkins'
+	archiveFileName = 'HelloJenkins.jar'
+	archiveVersion = "0.0.1-SNAPSHOT"
+	//mainClassName='com.example.HelloJenkins.HelloJenkinsApplication'
+}
 
 //bootRun {
 //	String activeProfile = System.properties['spring.profiles.active']
